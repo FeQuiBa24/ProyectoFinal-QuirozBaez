@@ -1,0 +1,103 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.districtFilter, .ambientFilter, .searchFilter{
+    display: none !important
+}
+.firstCompare{
+    background: brown !important;
+}
+.firstCompare:hover{
+    background: crimson !important;
+}
+.filterContainer{
+    padding: 10px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 5fr;
+    gap: 5%;
+    margin: 0 5%;
+}
+.ambientSelect, .districtSelect, .propertieSearch{
+    background: none;
+    backdrop-filter: contrast(0.5);
+    height: 30px;
+    border-radius: 15px;
+    border: none;
+    padding: 0 10px;
+}
+.cardsContainer{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+    gap: 1em;
+    margin: 1em;
+}
+.cardsContainer .card{
+    max-width: 500px;
+    background-color: #252525;
+    padding: 10px;
+    border-radius: 1em;
+}
+.cardsContainer .card .imgContainer{
+    overflow: hidden;
+    border-radius: .5em;
+    transform: perspective(1px);
+}
+.cardsContainer .card .imgContainer span{
+    z-index: 10;
+    opacity: 0;
+    font-size: 2em;
+    display: grid;
+    color: #fff;
+    inset: .1%;
+    text-align: center;
+    position: fixed;
+    place-items: center;
+    cursor: pointer;
+}
+.cardsContainer .card .imgContainer img{
+    width: 100%;
+    transition: transform .5s;
+}
+.cardsContainer .card .imgContainer span:hover + img{
+    transform: scale(110%);
+    filter: brightness(0.5);
+}
+.cardsContainer .card .imgContainer span:hover{
+    opacity: 1;
+}
+.cardsContainer .card ul{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* line-height: 2em; */
+}
+.cardsContainer .card ul li{
+    list-style-type: none;
+    color: #fff;
+    padding: .2em .5em;
+}
+.cardsContainer .card ul li.direction{
+    text-align: center;
+    width: 100% !important;
+    font-size: 150%;
+}
+.cardsContainer .card .compareButton{
+    position: absolute;
+    margin: 10px;
+    height: 32px;
+    padding-inline: 14px;
+    border-radius: 16px;
+    color: #fff;
+    background: #444cf7;
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, 0.6), inset -2px -2px 3px rgba(0, 0, 0, 0.6);
+    border: none;
+    cursor: pointer;
+    z-index: 1;
+}
+.cardsContainer .card .compareButton:hover{
+    background: #3866f2;
+}
+.cardsContainer .card .compareButton:active{
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.6);
+}
